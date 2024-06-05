@@ -1,33 +1,48 @@
-This is a [Plasmo extension](https://docs.plasmo.com/) project bootstrapped with [`plasmo init`](https://www.npmjs.com/package/plasmo).
+# 介绍 
+基于Plasmo,React,TailwindCss开发的一个浏览器插件，依赖本地Ollama实现翻译
 
-## Getting Started
+## 开始使用
 
-First, run the development server:
+0.请本地自行安装 Ollama
 
+详见:https://www.ollama.com
+
+0.1 下载大模型,我用的阿里的千问的大模型`qwen:7b`
+
+```bash
+ollama pull qwen:7b
+```
+0.2 启动ollama
+
+0.2.1退出Ollama客户端
+`启动Ollama服务`:
+```yaml
+# MacOS启动命令
+
+ OLLAMA_ORIGINS=chrome-extension://* ollama serve
+```
+
+Win:未测试
+
+
+
+1.安装相关依赖
+
+```bash
+pnpm install
+# or
+npm install
+````
+
+2.运行项目:
 ```bash
 pnpm dev
 # or
 npm run dev
 ```
 
-Open your browser and load the appropriate development build. For example, if you are developing for the chrome browser, using manifest v3, use: `build/chrome-mv3-dev`.
+3.在 Chrome 中加载扩展程序(我知道的你会的)
 
-You can start editing the popup by modifying `popup.tsx`. It should auto-update as you make changes. To add an options page, simply add a `options.tsx` file to the root of the project, with a react component default exported. Likewise to add a content page, add a `content.ts` file to the root of the project, importing some module and do some logic, then reload the extension on your browser.
+4.二次开发
+项目代码很简单,所有代码都在 [/sidepanel/index.tsx](sidepanel%2Findex.tsx)
 
-For further guidance, [visit our Documentation](https://docs.plasmo.com/)
-
-## Making production build
-
-Run the following:
-
-```bash
-pnpm build
-# or
-npm run build
-```
-
-This should create a production bundle for your extension, ready to be zipped and published to the stores.
-
-## Submit to the webstores
-
-The easiest way to deploy your Plasmo extension is to use the built-in [bpp](https://bpp.browser.market) GitHub action. Prior to using this action however, make sure to build your extension and upload the first version to the store to establish the basic credentials. Then, simply follow [this setup instruction](https://docs.plasmo.com/framework/workflows/submit) and you should be on your way for automated submission!
