@@ -1,6 +1,8 @@
 # 介绍 
 基于Plasmo,React,TailwindCss开发的一个浏览器插件，依赖本地Ollama实现翻译
 
+![img_1.png](img_1.png)
+
 ## 开始使用
 
 0.请本地自行安装 Ollama
