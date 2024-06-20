@@ -78,7 +78,7 @@ const SidePanel = () => {
         setHistoryList(history)
         const result = await ollama.generate({
             model: model,
-            prompt:orgText,
+            prompt:`Please translate this content: """${orgText}""", Please give me the translation result directly, prohibit returning any other content.`,
             system:prompt_zh,
             stream:true
         })
